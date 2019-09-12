@@ -1,18 +1,49 @@
 import React from "react";
+import styled from "styled-components";
 
- const DataCard = props =>{
+const DateCon = styled.div`
+width:20%;
+
+`;
+const ExplainCon = styled.div`
+width:50%;
+
+`;
+const CopyCon = styled.div`
+width:100%
+`;
+
+const Container = styled.div`
+  display :flex;
+`;
+const MainWrap = styled.div`
+display:flex;
+justify-content:center;
+flex-flow: row wrap;
+`;
+const DataCard = props =>{
     console.log("props",props);
     return (
+        <Container>
         <div className = "dataList">
             <h2>Title: {props.title}</h2>
 
             <img alt ="planets" src={props.url}>
             </img>
-            <p>Date: {props.date}</p>
-            <p>{props.explanation}</p>
-            <h2>{props.copyright}</h2>
 
+            <MainWrap>
+           <DateCon>
+                <p>Date: {props.date}</p>
+            </DateCon>
+            <ExplainCon>
+                <p>{props.explanation}</p>
+            </ExplainCon>
+            <CopyCon>
+                <h2>{props.copyright}</h2>
+            </CopyCon>
+            </MainWrap>
         </div>
+        </Container>
 )
  }
 
